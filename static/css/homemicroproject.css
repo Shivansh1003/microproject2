@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #303b35;
+  background: #f4f7f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 8px 6%;
+  background: #315c4b;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(49, 92, 75, 0.15);
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header > div p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.developer,
+.theme,
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.developer:hover,
+.theme:hover {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.devimage,
+.themeimage {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo2 {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 58px auto 20px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(48, 59, 53, 0.16);
+}
+
+.heading {
+  display: block;
+  padding: 0 16px;
+  color: #315c4b;
+  font-size: 42px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.h2 {
+  display: inline-block;
+  margin-top: 10px;
+  color: #68756f;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.subimage {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin: 34px auto 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.line1 {
+  max-width: 720px;
+  margin: 18px auto 22px;
+  padding: 24px 30px;
+  border: 1px solid #d5e0da;
+  border-radius: 14px;
+  background: #fff;
+  color: #68756f;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(48, 59, 53, 0.06);
+}
+
+.intro-title {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #315c4b;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.button {
+  padding: 0 16px 48px;
+  text-align: center;
+}
+
+.button .signup-link {
+  display: inline-block;
+  min-width: 150px;
+  padding: 12px 26px;
+  border: 0;
+  border-radius: 8px;
+  background: #3d7058;
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(61, 112, 88, 0.22);
+  transition: background-color 160ms ease, transform 160ms ease;
+  text-decoration: none;
+}
+
+.button .signup-link:hover {
+  background: #315c4b;
+  transform: translateY(-1px);
+}
+
+.button p {
+  margin: 14px 0 8px;
+  color: #68756f;
+  font-size: 14px;
+}
+
+.button a {
+  color: #315c4b;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button a:hover {
+  text-decoration: underline;
+}
+
+body.dark-theme {
+  background: #1c2922;
+  color: #edf5f0;
+}
+
+body.dark-theme .heading {
+  color: #dcebe1;
+}
+
+body.dark-theme .h2 {
+  color: #b8c9bf;
+}
+
+body.dark-theme .line1 {
+  border-color: #3d5548;
+  background: #293a30;
+  color: #c8d8ce;
+}
+
+body.dark-theme .intro-title {
+  color: #dcebe1;
+}
+
+body.dark-theme .button p {
+  color: #b8c9bf;
+}
+
+body.dark-theme .button a {
+  color: #b8d9c4;
+}
+
+@media (max-width: 600px) {
+  .header {
+    min-height: 60px;
+    padding: 7px 16px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header > div p {
+    font-size: 18px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .developer,
+  .theme,
+  .profile {
+    width: 38px;
+    height: 38px;
+  }
+
+  .devimage,
+  .themeimage {
+    width: 27px;
+    height: 27px;
+  }
+
+  .logo2 {
+    width: 96px;
+    height: 96px;
+    margin-top: 42px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .h2 {
+    font-size: 15px;
+  }
+
+  .line1 {
+    margin: 18px 16px;
+    padding: 20px 18px;
+    font-size: 15px;
+  }
+
+  .intro-title {
+    font-size: 21px;
+  }
+}

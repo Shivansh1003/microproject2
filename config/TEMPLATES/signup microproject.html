@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title" align=center>SIGN UP</h1>
+
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <table border="3" align="center">
+        <tr>
+          <td>Name</td>
+          <td><input type="text" name="name" required></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="email" placeholder="@mitsgwl.ac.in" required></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password" placeholder="password" required></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><button type="submit">Sign up</button></td>
+        </tr>
+        </table>
+      </form>
+  </body>
+</html>

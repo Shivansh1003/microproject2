@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Learning | EduNexus</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f3ef;
+      color: #303936;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid #d4d9d5;
+      background: white;
+    }
+
+    .brand,
+    .header-note {
+      color: #315c4b;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow,
+    .notes-title {
+      color: #315c4b;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .notes-title {
+      margin: 0;
+    }
+
+    .note-section {
+      padding: 16px;
+      border: 1px solid #d4d9d5;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .note-section h2 {
+      margin-top: 0;
+    }
+
+    .note-section a {
+      color: #315c4b;
+    }
+
+    @media (max-width: 650px) {
+      .page-shell {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'study' %}">EduNexus</a>
+    <a class="header-note" href="{% url 'study' %}">&larr; Back to semester</a>
+  </header>
+  <main class="page-shell">
+    <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
+    <h1 class="notes-title">Machine Learning</h1>
+    <section class="note-section">
+    <h2>What is machine learning?</h2>
+    <p>Machine learning helps computers find patterns in examples and use them to make predictions.</p>
+    <h2>Example</h2>
+    <p>A computer can learn from pictures labeled “cat” or “dog” and use what it learned to classify a new picture.</p>
+    <h2>More notes</h2>
+    <p>Training data is used to teach a model, while test data helps check how well it works on examples it has not seen before.</p>
+    <p>In supervised learning, examples include correct answers called labels. A model compares its predictions with those labels and adjusts to reduce errors.</p>
+    <h2>Types of learning</h2>
+    <ul>
+      <li><strong>Supervised learning:</strong> uses labeled data for classification or regression.</li>
+      <li><strong>Unsupervised learning:</strong> finds patterns or groups in data without labels.</li>
+      <li><strong>Reinforcement learning:</strong> learns by receiving rewards or penalties from an environment.</li>
+    </ul>
+    <h2>Common tasks</h2>
+    <p><strong>Classification</strong> predicts a category, such as spam or not spam. <strong>Regression</strong> predicts a continuous number, such as a house price.</p>
+    <h2>Overfitting and underfitting</h2>
+    <p><strong>Overfitting</strong> happens when a model learns the training data too closely and performs poorly on new data. <strong>Underfitting</strong> happens when a model is too simple to learn the main patterns.</p>
+    <h2>Model workflow</h2>
+    <ol>
+      <li>Collect and clean the data.</li>
+      <li>Separate the data into training, validation, and test sets.</li>
+      <li>Choose a model and fit it with the training data.</li>
+      <li>Tune the model using the validation data.</li>
+      <li>Measure final performance with test data.</li>
+    </ol>
+    <h2>Important terms</h2>
+    <ul>
+      <li><strong>Feature:</strong> an input used to make a prediction.</li>
+      <li><strong>Label:</strong> the known result in supervised learning.</li>
+      <li><strong>Accuracy:</strong> the fraction of predictions that are correct.</li>
+      <li><strong>Loss:</strong> a measure of how far predictions are from the expected answers.</li>
+    </ul>
+    <p><a href="https://example.com/machine-learning-syllabus">See syllabus</a></p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear Algebra | EduNexus</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f3ef;
+      color: #303936;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid #d4d9d5;
+      background: white;
+    }
+
+    .brand,
+    .header-note,
+    .text-link,
+    .syllabus-return {
+      color: #315c4b;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      color: #315c4b;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .notes-title {
+      margin: 0;
+      color: #315c4b;
+    }
+
+    .unit-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      align-items: start;
+      gap: 12px;
+    }
+
+    .unit-nav,
+    .note-section,
+    .unit-placeholder {
+      padding: 16px;
+      border: 1px solid #d4d9d5;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .unit-nav,
+    .unit-content {
+      display: grid;
+      gap: 12px;
+    }
+
+    .unit-nav a {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px;
+      color: #303936;
+      text-decoration: none;
+    }
+
+    .unit-nav a:hover {
+      background: #f3f3ef;
+    }
+
+    .unit-nav h2,
+    .note-section h2,
+    .unit-placeholder h2 {
+      margin-top: 0;
+    }
+
+    .note-section h3 {
+      margin: 20px 0 6px;
+    }
+
+    .note-section code,
+    .math-block code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .unit-status {
+      color: #64716b;
+      font-size: 13px;
+    }
+
+    .math-block,
+    .key-idea {
+      padding: 12px;
+      border: 1px solid #d4d9d5;
+      border-radius: 4px;
+      background: white;
+    }
+
+    .math-block {
+      display: grid;
+      gap: 6px;
+      background: #f8f8f5;
+    }
+
+    .unit-placeholder p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 650px) {
+      .page-shell {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+
+      .unit-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'study' %}">EduNexus</a>
+    <a class="header-note" href="{% url 'study' %}">&larr; Back to semester</a>
+  </header>
+
+  <main class="page-shell notes-page">
+    <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
+    <h1 class="notes-title">Linear Algebra</h1>
+    <p class="notes-intro">Explore the five units below. Unit 1 is ready with notes on matrices, rank, and echelon forms.</p>
+
+    <div class="unit-layout" id="units">
+      <nav class="unit-nav" aria-label="Linear Algebra units">
+        <h2>Course units</h2>
+        <a href="#unit-1"><span>Unit 1</span><span class="unit-status">Notes ready</span></a>
+        <a href="#unit-2"><span>Unit 2</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-3"><span>Unit 3</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-4"><span>Unit 4</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-5"><span>Unit 5</span><span class="unit-status">Coming soon</span></a>
+        <a class="syllabus-return" href="{% url 'study' %}#syllabus">View syllabus outline</a>
+      </nav>
+
+      <div class="unit-content">
+        <section class="note-section" id="unit-1">
+          <p class="eyebrow">UNIT 1 &bull; NOTES READY</p>
+          <h2>Matrices, rank, and echelon forms</h2>
+          <p class="section-lead">A matrix organizes numbers into rows and columns. Row operations help simplify a matrix without changing the key information needed to solve systems of linear equations.</p>
+
+          <h3>1. What is a matrix?</h3>
+          <p>A matrix is a rectangular arrangement of entries. A matrix with <em>m</em> rows and <em>n</em> columns has order <em>m &times; n</em>.</p>
+          <div class="math-block">
+            <span class="math-label">Example: a matrix of order 2 &times; 3</span>
+            <code>A = [ 1  2  3 ]<br>&nbsp;&nbsp;&nbsp;&nbsp;[ 4  5  6 ]</code>
+          </div>
+          <ul class="note-list">
+            <li>A matrix is <strong>square</strong> when it has the same number of rows and columns.</li>
+            <li>A <strong>zero matrix</strong> has only zero entries.</li>
+            <li>An <strong>identity matrix</strong> has 1s on its main diagonal and 0s elsewhere.</li>
+          </ul>
+
+          <h3>2. Elementary row operations</h3>
+          <p>These operations transform a matrix into a simpler form:</p>
+          <ol class="note-list">
+            <li>Interchange two rows: <code>R<sub>i</sub> &harr; R<sub>j</sub></code>.</li>
+            <li>Multiply a row by a nonzero constant: <code>R<sub>i</sub> &rarr; kR<sub>i</sub></code>, where <code>k &ne; 0</code>.</li>
+            <li>Add a multiple of one row to another: <code>R<sub>i</sub> &rarr; R<sub>i</sub> + kR<sub>j</sub></code>.</li>
+          </ol>
+          <p>These are called elementary row operations. They preserve the rank of a matrix and the solution set of the corresponding system when applied to its augmented matrix.</p>
+
+          <h3>3. Row echelon form</h3>
+          <p>A matrix is in <strong>row echelon form (REF)</strong> when:</p>
+          <ul class="note-list">
+            <li>Any rows containing only zeros are at the bottom.</li>
+            <li>The first nonzero entry in each nonzero row (its <strong>leading entry</strong> or pivot) is to the right of the pivot in the row above.</li>
+            <li>All entries below each pivot are zero.</li>
+          </ul>
+          <p>In <strong>reduced row echelon form (RREF)</strong>, every pivot is 1 and is the only nonzero entry in its column.</p>
+
+          <h3>4. Worked example: find the rank</h3>
+          <p>Use row operations to reduce the following matrix to echelon form:</p>
+          <div class="math-block">
+            <span class="math-label">Starting matrix</span>
+            <code>A = [ 1  2   1 ]<br>&nbsp;&nbsp;&nbsp;&nbsp;[ 2  4   0 ]<br>&nbsp;&nbsp;&nbsp;&nbsp;[ 3  6   3 ]</code>
+          </div>
+          <ol class="note-list worked-steps">
+            <li>Apply <code>R<sub>2</sub> &rarr; R<sub>2</sub> - 2R<sub>1</sub></code> and <code>R<sub>3</sub> &rarr; R<sub>3</sub> - 3R<sub>1</sub></code>.</li>
+            <li>Scale the second row with <code>R<sub>2</sub> &rarr; -&frac12;R<sub>2</sub></code>.</li>
+          </ol>
+          <div class="math-block">
+            <span class="math-label">Row echelon form</span>
+            <code>[ 1  2  1 ]<br>[ 0  0  1 ]<br>[ 0  0  0 ]</code>
+          </div>
+          <p>There are two nonzero rows and two pivots, so <strong>rank(A) = 2</strong>. The pivot columns are columns 1 and 3.</p>
+          <div class="math-block">
+            <span class="math-label">Reduced row echelon form</span>
+            <code>[ 1  2  0 ]<br>[ 0  0  1 ]<br>[ 0  0  0 ]</code>
+          </div>
+
+          <h3>5. Rank of a matrix</h3>
+          <p>The <strong>rank</strong> is the number of pivot positions in an echelon form. It is also the maximum number of linearly independent rows or columns.</p>
+          <div class="key-idea">
+            <strong>Quick check</strong>
+            <span>Reduce the matrix to REF, count its nonzero rows (or pivots), and that count is its rank.</span>
+          </div>
+          <ul class="note-list">
+            <li>The rank cannot be greater than the number of rows or columns.</li>
+            <li>A zero matrix has rank 0.</li>
+            <li>For a square matrix, full rank means its rows and columns are independent.</li>
+          </ul>
+        </section>
+
+        <section class="unit-placeholder" id="unit-2">
+          <p class="eyebrow">UNIT 2</p>
+          <h2>Unit 2 notes</h2>
+          <p>Notes for this unit will be added soon.</p>
+        </section>
+        <section class="unit-placeholder" id="unit-3">
+          <p class="eyebrow">UNIT 3</p>
+          <h2>Unit 3 notes</h2>
+          <p>Notes for this unit will be added soon.</p>
+        </section>
+        <section class="unit-placeholder" id="unit-4">
+          <p class="eyebrow">UNIT 4</p>
+          <h2>Unit 4 notes</h2>
+          <p>Notes for this unit will be added soon.</p>
+        </section>
+        <section class="unit-placeholder" id="unit-5">
+          <p class="eyebrow">UNIT 5</p>
+          <h2>Unit 5 notes</h2>
+          <p>Notes for this unit will be added soon.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

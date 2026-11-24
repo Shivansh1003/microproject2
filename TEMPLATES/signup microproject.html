@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EduNexus - Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signupmicroproject.css' %}" />
+  </head>
+  <body class="page-body">
+    <main class="signup-card">
+      <h1 class="page-title">Sign Up</h1>
+      <p class="page-note">Create your EduNexus account</p>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+
+      <form class="signup-form" action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <label class="field-label" for="name">Name</label>
+        <input class="form-input" id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label class="field-label" for="email">Email</label>
+        <input class="form-input" id="email" name="email" type="email" placeholder="@mitsgwl.ac.in" required>
+
+        <label class="field-label" for="password">Password</label>
+        <input class="form-input" id="password" name="password" type="password" placeholder="Create a password" required>
+
+        <button class="button signup-button" type="submit">Sign Up</button>
+      </form>
+
+      <p class="login-note">Already have an account? <a class="login-link" href="{% url 'login' %}">Log in</a></p>
+      <a class="button home-button" href="/">Home</a>
+    </main>
+  </body>
+</html>

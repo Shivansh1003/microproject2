@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internet &amp; Web Technology | EduNexus</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f3ef;
+      color: #303936;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid #d4d9d5;
+      background: white;
+    }
+
+    .brand,
+    .header-note {
+      color: #315c4b;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow,
+    .notes-title {
+      color: #315c4b;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .notes-title {
+      margin: 0;
+    }
+
+    .note-section {
+      padding: 16px;
+      border: 1px solid #d4d9d5;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .note-section h2 {
+      margin-top: 0;
+    }
+
+    .note-section a {
+      color: #315c4b;
+    }
+
+    @media (max-width: 650px) {
+      .page-shell {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'study' %}">EduNexus</a>
+    <a class="header-note" href="{% url 'study' %}">&larr; Back to semester</a>
+  </header>
+  <main class="page-shell">
+    <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
+    <h1 class="notes-title">Internet &amp; Web Technology</h1>
+    <section class="note-section">
+    <h2>Internet and the web</h2>
+    <p>The internet connects computers. The web lets browsers request pages from web servers.</p>
+    <h2>Web basics</h2>
+    <p>HTML structures a page, CSS styles it, and JavaScript can add interactive behavior.</p>
+    <h2>More notes</h2>
+    <p>A browser sends an HTTP request when it needs a web resource. A web server responds with the requested page or other data.</p>
+    <p>A URL identifies a resource on the web. It commonly includes a protocol, a domain name, and an optional path to a specific page.</p>
+    <h2>How a page loads</h2>
+    <ol>
+      <li>The browser finds the server through a domain name.</li>
+      <li>The browser sends an HTTP or HTTPS request.</li>
+      <li>The server returns HTML and related resources.</li>
+      <li>The browser requests stylesheets, images, scripts, and other files.</li>
+      <li>The browser builds and displays the page.</li>
+    </ol>
+    <h2>Common HTTP methods</h2>
+    <ul>
+      <li><strong>GET:</strong> requests a resource.</li>
+      <li><strong>POST:</strong> submits data to the server.</li>
+      <li><strong>PUT:</strong> replaces or creates a resource.</li>
+      <li><strong>DELETE:</strong> removes a resource.</li>
+    </ul>
+    <h2>HTML basics</h2>
+    <p>HTML uses elements and tags to describe content. Semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> describe the purpose of page sections.</p>
+    <h2>CSS basics</h2>
+    <p>CSS uses selectors to choose HTML elements and declarations to set their appearance. The box model includes content, padding, border, and margin.</p>
+    <h2>Responsive design</h2>
+    <p>Responsive pages work across screen sizes. Flexible widths, grid layouts, and media queries help adapt content for phones, tablets, and desktops.</p>
+    <h2>Security reminder</h2>
+    <p>HTTPS encrypts communication between the browser and server. Applications should validate input, protect passwords, and avoid exposing sensitive information.</p>
+    <p><a href="https://example.com/web-technology-syllabus">See syllabus</a></p>
+    </section>
+  </main>
+</body>
+</html>

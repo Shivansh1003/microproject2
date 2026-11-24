@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EduNexus</title>
+    <link rel="stylesheet" href="{% static 'css/homemicroproject.css' %}?v=3" />
+  </head>
+  <body>
+    <header class=header>
+      <div>
+      <img src="{% static 'images/edunexus-e.png' %}" class="logo" alt="EduNexus">
+      <p>EduNexus</p>
+      </div>
+      <nav class='buttons'>
+               <button class="developer"><a href="https://ourjankari.com"><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Lx8J5Md78AdH8ytFdoC3aDpmIA19aMcKmSARrrf2Xg&s=10' class=devimage></a></button>
+               <button class="theme"><a href="https://gottalearnjs.com"><img src='https://web.dev/static/articles/building/a-theme-switch-component/image/alttexthere-19c8b69d60ba.png' class=themeimage></a></button>
+               
+      </nav>
+      
+
+      
+    </header>
+    <img src="{% static 'images/edunexus-e.png' %}" class="logo2" alt="EduNexus">
+     <div class=heading><h class=h1>EduNexus</h>
+     <br>
+     <h class=h2>Madhav Institute Of Technology And Science</h>
+     </div>
+     <div>
+     <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNT4TPe9ltLVTnAtl3b0b_SNX5HtvPDOoYDfyHGNoZiw&s=10'class=subimage> 
+
+     <p class="line1"><span class="intro-title">Built for better learning</span><br>
+      Simple tools to help you plan your studies, follow your syllabus, and see your progress.
+     </p>
+     <div class=button> 
+     <a class="signup-link" href="{% url 'signup' %}">Sign-up</a>
+     <p>Or</p>
+     <a href="{% url 'login' %}">already have an account?
+      <br> Login
+     </a>
+     </div>
+
+
+
+
+
+
+     </div>
+
+  </body>
+</html>

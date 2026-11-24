@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Logic Design | EduNexus</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f3ef;
+      color: #303936;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid #d4d9d5;
+      background: white;
+    }
+
+    .brand,
+    .header-note {
+      color: #315c4b;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow,
+    .notes-title {
+      color: #315c4b;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .notes-title {
+      margin: 0;
+    }
+
+    .note-section {
+      padding: 16px;
+      border: 1px solid #d4d9d5;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .note-section h2 {
+      margin-top: 0;
+    }
+
+    .note-section a {
+      color: #315c4b;
+    }
+
+    @media (max-width: 650px) {
+      .page-shell {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'study' %}">EduNexus</a>
+    <a class="header-note" href="{% url 'study' %}">&larr; Back to semester</a>
+  </header>
+  <main class="page-shell">
+    <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
+    <h1 class="notes-title">Digital Logic Design</h1>
+    <section class="note-section">
+    <h2>Binary values</h2>
+    <p>Digital logic uses two values: 0 (false) and 1 (true).</p>
+    <h2>AND gate</h2>
+    <p>An AND gate gives 1 only when both inputs are 1. For inputs 1 and 0, the output is 0.</p>
+    <h2>More notes</h2>
+    <p>An OR gate gives 1 when at least one input is 1. A NOT gate reverses its input, changing 0 to 1 and 1 to 0.</p>
+    <p>A truth table lists every possible input combination and the output for a logic circuit. It is a useful way to check whether a circuit behaves as intended.</p>
+    <h2>Other basic gates</h2>
+    <ul>
+      <li><strong>NAND:</strong> the opposite of AND. It outputs 0 only when every input is 1.</li>
+      <li><strong>NOR:</strong> the opposite of OR. It outputs 1 only when every input is 0.</li>
+      <li><strong>XOR:</strong> outputs 1 when the inputs are different.</li>
+      <li><strong>XNOR:</strong> outputs 1 when the inputs are the same.</li>
+    </ul>
+    <h2>Number systems</h2>
+    <p>Binary uses base 2, decimal uses base 10, and hexadecimal uses base 16. Hexadecimal is often used to represent binary values in a shorter form.</p>
+    <p>Example: the 8-bit binary value <code>11111111</code> is <code>255</code> in decimal and <code>FF</code> in hexadecimal.</p>
+    <h2>Combinational logic</h2>
+    <p>The output of combinational logic depends only on the current inputs. Examples include adders, multiplexers, decoders, and encoders.</p>
+    <h2>Sequential logic</h2>
+    <p>Sequential circuits use memory elements such as flip-flops and latches. Their output can depend on current inputs and previous states.</p>
+    <h2>Design steps</h2>
+    <ol>
+      <li>Define the required inputs and outputs.</li>
+      <li>Write a truth table for the behavior.</li>
+      <li>Simplify the Boolean expressions.</li>
+      <li>Draw and test the circuit.</li>
+    </ol>
+    <p><a href="https://example.com/digital-logic-syllabus">See syllabus</a></p>
+    </section>
+  </main>
+</body>
+</html>

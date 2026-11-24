@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduNexus | Study</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background: #f3f3ef;
+      color: #303936;
+      font-family: Arial, sans-serif;
+    }
+
+    .study-card {
+      width: 100%;
+      max-width: 480px;
+      margin: 24px auto;
+      padding: 24px;
+      border: 1px solid #d4d9d5;
+      border-radius: 8px;
+      background: white;
+    }
+
+    h1 {
+      margin: 0;
+      color: #344c45;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .intro {
+      margin: 10px 0 24px;
+      color: #68756f;
+      text-align: center;
+    }
+
+    .course-form label {
+      display: block;
+      margin: 0 0 7px;
+      color: #35443e;
+    }
+
+    .course-form select {
+      width: 100%;
+      height: 42px;
+      margin: 0 0 18px;
+      padding: 0 12px;
+      border: 1px solid #c9d1cc;
+      border-radius: 4px;
+      background: white;
+      color: #303936;
+      font: inherit;
+    }
+
+    .course-form button {
+      width: 100%;
+      padding: 11px;
+      border: 0;
+      border-radius: 4px;
+      background: #526b59;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .course-form button:hover {
+      background: #405746;
+    }
+
+    .availability-note,
+    .subject-detail {
+      color: #68756f;
+      font-size: 14px;
+    }
+
+    .availability-note {
+      margin: 16px 0 0;
+    }
+
+    .notice {
+      padding: 10px;
+      border: 1px solid #d4d9d5;
+      border-radius: 4px;
+      background: #f3f3ef;
+    }
+
+    .study-results {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #d4d9d5;
+    }
+
+    .study-results h2,
+    .study-results h3 {
+      color: #344c45;
+    }
+
+    .study-results a {
+      color: #315c4b;
+    }
+
+    .subject-list {
+      padding: 0;
+      list-style: none;
+    }
+
+    .subject-list li {
+      padding: 12px 0;
+      border-top: 1px solid #e1e5e2;
+    }
+
+    .subject-list a {
+      font-weight: bold;
+    }
+
+    .subject-detail {
+      display: block;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .study-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="study-card">
+    <h1>Study</h1>
+    <p class="intro">Choose your course to see your subjects and notes.</p>
+
+    <form class="course-form" method="post" action="{% url 'study' %}">
+      {% csrf_token %}
+      <label for="year">Year</label>
+      <select id="year" name="year" required>
+        <option value="1" {% if selection.year == "1" or not selection.year %}selected{% endif %}>1st Year</option>
+      </select>
+
+      <label for="semester">Semester</label>
+      <select id="semester" name="semester" required>
+        <option value="1" {% if selection.semester == "1" or not selection.semester %}selected{% endif %}>1st Semester</option>
+      </select>
+
+      <label for="branch">Branch</label>
+      <select id="branch" name="branch" required>
+        <option value="aiml" {% if selection.branch == "aiml" or not selection.branch %}selected{% endif %}>AIML</option>
+      </select>
+
+      <button type="submit">Let&rsquo;s go</button>
+    </form>
+
+    <p class="availability-note">Available: AIML, 1st Year, 1st Semester.</p>
+
+    {% if selection_attempted and not course_available %}
+      <p class="notice" role="status">That course is not available yet. Please choose AIML above.</p>
+    {% endif %}
+
+    {% if course_available %}
+      <section class="study-results" aria-labelledby="subjects-title">
+        <h2 id="subjects-title">Your subjects</h2>
+        <p>AIML &bull; 1st Year &bull; 1st Semester</p>
+
+        <h3>Syllabus</h3>
+        <p>Five units in Linear Algebra. Notes for Unit 1 are ready.</p>
+        <p><a href="{% url 'linear_algebra' %}#units">View the unit list</a></p>
+
+        <ul class="subject-list">
+          <li>
+            <a href="{% url 'linear_algebra' %}">Linear Algebra</a>
+            <span class="subject-detail">5 units; Unit 1 notes are ready</span>
+          </li>
+          <li>
+            <strong>Machine Learning</strong>
+            <span class="subject-detail">Coming soon</span>
+          </li>
+          <li>
+            <strong>Digital Logic Design</strong>
+            <span class="subject-detail">Coming soon</span>
+          </li>
+          <li>
+            <strong>Internet &amp; Web Technology</strong>
+            <span class="subject-detail">Coming soon</span>
+          </li>
+          <li>
+            <strong>Programming</strong>
+            <span class="subject-detail">Coming soon</span>
+          </li>
+        </ul>
+      </section>
+    {% endif %}
+  </main>
+</body>
+</html>

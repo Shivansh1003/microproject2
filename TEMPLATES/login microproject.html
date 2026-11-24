@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EduNexus</title>
+    <link rel="stylesheet" href="{% static 'css/loginmicroproject.css' %}" />
+  </head>
+  <body>
+      <h1 class="title" align=center>LOGIN</h1>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p role="alert">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+
+      <form class="login-form" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <table class="login-table">
+          <tr>
+            <td class="form-label">Email</td>
+            <td><input class="login-input" type="email" name="email" placeholder="MITS@" required></td>
+          </tr>
+          <tr>
+            <td class="form-label">Password</td>
+            <td><input class="login-input" type="password" name="password" placeholder="Password" required></td>
+          </tr>
+          <tr>
+            <td class="form-actions" colspan="2">
+              <button class="login-button" type="submit">Login</button><br>
+              <a class="signup-link" href="{% url 'signup' %}">Create new account</a>
+            </td>
+          </tr>
+        </table>
+      </form>
+  </body>
+</html>
