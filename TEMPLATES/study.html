@@ -167,30 +167,29 @@
         <h2 id="subjects-title">Your subjects</h2>
         <p>AIML &bull; 1st Year &bull; 1st Semester</p>
 
-        <h3>Syllabus</h3>
-        <p>Five units in Linear Algebra. Notes for Unit 1 are ready.</p>
+        <h3><a href="https://web.mitsgwalior.in/images/Departments/Centre%20of%20Artificial%20Intelligence/Syllabus/2026JulySyllabus/I%20Year%20Syllabus%20admitted%20in%20session%202026-27.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a></h3>
         <p><a href="{% url 'linear_algebra' %}#units">View the unit list</a></p>
 
         <ul class="subject-list">
           <li>
             <a href="{% url 'linear_algebra' %}">Linear Algebra</a>
-            <span class="subject-detail">5 units; Unit 1 notes are ready</span>
+            <span class="subject-detail">5 units</span>
           </li>
           <li>
-            <strong>Machine Learning</strong>
-            <span class="subject-detail">Coming soon</span>
+            <a href="{% url 'machine_learning' %}">Machine Learning</a>
+            <span class="subject-detail">Introduction and core concepts</span>
           </li>
           <li>
-            <strong>Digital Logic Design</strong>
-            <span class="subject-detail">Coming soon</span>
+            <a href="{% url 'digital_logic' %}">Digital Logic Design</a>
+            <span class="subject-detail">Logic gates and digital design basics</span>
           </li>
           <li>
-            <strong>Internet &amp; Web Technology</strong>
-            <span class="subject-detail">Coming soon</span>
+            <a href="{% url 'web_technology' %}">Internet &amp; Web Technology</a>
+            <span class="subject-detail">Web fundamentals and HTTP basics</span>
           </li>
           <li>
-            <strong>Programming</strong>
-            <span class="subject-detail">Coming soon</span>
+            <a href="{% url 'programming' %}">Programming</a>
+            <span class="subject-detail">Variables, loops, functions, and debugging</span>
           </li>
         </ul>
       </section>

@@ -60,9 +60,18 @@
       background: white;
     }
 
-    .note-section h2 {
-      margin-top: 0;
-    }
+    .notes-intro { color: #68756f; }
+    .unit-layout { display: grid; grid-template-columns: 200px 1fr; align-items: start; gap: 12px; }
+    .unit-nav, .unit-content { display: grid; gap: 12px; }
+    .unit-nav { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-nav h2 { margin: 0 0 4px; }
+    .unit-nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px; color: #303936; text-decoration: none; }
+    .unit-nav a:hover { background: #f3f3ef; }
+    .unit-status { color: #64716b; font-size: 13px; }
+    .unit-placeholder { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-placeholder h2 { margin-top: 0; }
+    .note-section h2 { margin-top: 20px; }
+    .note-section h2:first-of-type { margin-top: 0; }
 
     .note-section a {
       color: #315c4b;
@@ -73,6 +82,7 @@
         margin: 20px auto;
         padding: 0 16px;
       }
+      .unit-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -84,41 +94,61 @@
   <main class="page-shell">
     <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
     <h1 class="notes-title">Machine Learning</h1>
-    <section class="note-section">
-    <h2>What is machine learning?</h2>
-    <p>Machine learning helps computers find patterns in examples and use them to make predictions.</p>
-    <h2>Example</h2>
-    <p>A computer can learn from pictures labeled “cat” or “dog” and use what it learned to classify a new picture.</p>
-    <h2>More notes</h2>
-    <p>Training data is used to teach a model, while test data helps check how well it works on examples it has not seen before.</p>
-    <p>In supervised learning, examples include correct answers called labels. A model compares its predictions with those labels and adjusts to reduce errors.</p>
-    <h2>Types of learning</h2>
-    <ul>
-      <li><strong>Supervised learning:</strong> uses labeled data for classification or regression.</li>
-      <li><strong>Unsupervised learning:</strong> finds patterns or groups in data without labels.</li>
-      <li><strong>Reinforcement learning:</strong> learns by receiving rewards or penalties from an environment.</li>
-    </ul>
-    <h2>Common tasks</h2>
-    <p><strong>Classification</strong> predicts a category, such as spam or not spam. <strong>Regression</strong> predicts a continuous number, such as a house price.</p>
-    <h2>Overfitting and underfitting</h2>
-    <p><strong>Overfitting</strong> happens when a model learns the training data too closely and performs poorly on new data. <strong>Underfitting</strong> happens when a model is too simple to learn the main patterns.</p>
-    <h2>Model workflow</h2>
-    <ol>
-      <li>Collect and clean the data.</li>
-      <li>Separate the data into training, validation, and test sets.</li>
-      <li>Choose a model and fit it with the training data.</li>
-      <li>Tune the model using the validation data.</li>
-      <li>Measure final performance with test data.</li>
-    </ol>
-    <h2>Important terms</h2>
-    <ul>
-      <li><strong>Feature:</strong> an input used to make a prediction.</li>
-      <li><strong>Label:</strong> the known result in supervised learning.</li>
-      <li><strong>Accuracy:</strong> the fraction of predictions that are correct.</li>
-      <li><strong>Loss:</strong> a measure of how far predictions are from the expected answers.</li>
-    </ul>
-    <p><a href="https://example.com/machine-learning-syllabus">See syllabus</a></p>
-    </section>
+    <p class="notes-intro">Explore the five units below. Unit 1 introduces machine learning concepts and the basic model workflow.</p>
+
+    <div class="unit-layout" id="units">
+      <nav class="unit-nav" aria-label="Machine Learning units">
+        <h2>Course units</h2>
+        <a href="#unit-1"><span>Unit 1</span><span class="unit-status">Notes ready</span></a>
+        <a href="#unit-2"><span>Unit 2</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-3"><span>Unit 3</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-4"><span>Unit 4</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-5"><span>Unit 5</span><span class="unit-status">Coming soon</span></a>
+        <a href="{% url 'study' %}">View syllabus outline</a>
+      </nav>
+
+      <div class="unit-content">
+        <section class="note-section" id="unit-1">
+          <p class="eyebrow">UNIT 1 &bull; NOTES READY</p>
+          <h2>Introduction to machine learning</h2>
+          <p>Machine learning helps computers find patterns in examples and use them to make predictions.</p>
+          <h2>Worked example</h2>
+          <p>A computer can learn from pictures labeled "cat" or "dog" and use what it learned to classify a new picture.</p>
+          <h2>Training and testing</h2>
+          <p>Training data teaches a model, while test data checks how well it works on examples it has not seen before.</p>
+          <p>In supervised learning, examples include correct answers called labels. A model compares its predictions with those labels and adjusts to reduce errors.</p>
+          <h2>Types of learning</h2>
+          <ul>
+            <li><strong>Supervised learning:</strong> uses labeled data for classification or regression.</li>
+            <li><strong>Unsupervised learning:</strong> finds patterns or groups in data without labels.</li>
+            <li><strong>Reinforcement learning:</strong> learns by rewards or penalties from an environment.</li>
+          </ul>
+          <h2>Common tasks</h2>
+          <p><strong>Classification</strong> predicts a category, such as spam or not spam. <strong>Regression</strong> predicts a continuous number, such as a house price.</p>
+          <h2>Overfitting and underfitting</h2>
+          <p><strong>Overfitting</strong> happens when a model learns training data too closely and performs poorly on new data. <strong>Underfitting</strong> happens when a model is too simple to learn the main patterns.</p>
+          <h2>Model workflow</h2>
+          <ol>
+            <li>Collect and clean the data.</li>
+            <li>Separate data into training, validation, and test sets.</li>
+            <li>Choose a model and fit it with the training data.</li>
+            <li>Tune the model using validation data.</li>
+            <li>Measure final performance with test data.</li>
+          </ol>
+          <h2>Important terms</h2>
+          <ul>
+            <li><strong>Feature:</strong> an input used to make a prediction.</li>
+            <li><strong>Label:</strong> the known result in supervised learning.</li>
+            <li><strong>Accuracy:</strong> the fraction of predictions that are correct.</li>
+            <li><strong>Loss:</strong> a measure of how far predictions are from expected answers.</li>
+          </ul>
+        </section>
+        <section class="unit-placeholder" id="unit-2"><p class="eyebrow">UNIT 2</p><h2>Unit 2 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-3"><p class="eyebrow">UNIT 3</p><h2>Unit 3 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-4"><p class="eyebrow">UNIT 4</p><h2>Unit 4 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-5"><p class="eyebrow">UNIT 5</p><h2>Unit 5 notes</h2><p>Notes for this unit will be added soon.</p></section>
+      </div>
+    </div>
   </main>
 </body>
 </html>

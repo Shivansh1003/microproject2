@@ -67,12 +67,23 @@
     .note-section a {
       color: #315c4b;
     }
+    .notes-intro { color: #68756f; }
+    .unit-layout { display: grid; grid-template-columns: 200px 1fr; align-items: start; gap: 12px; }
+    .unit-nav, .unit-content { display: grid; gap: 12px; }
+    .unit-nav { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-nav h2 { margin: 0 0 4px; }
+    .unit-nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px; color: #303936; text-decoration: none; }
+    .unit-nav a:hover { background: #f3f3ef; }
+    .unit-status { color: #64716b; font-size: 13px; }
+    .unit-placeholder { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-placeholder h2 { margin-top: 0; }
 
     @media (max-width: 650px) {
       .page-shell {
         margin: 20px auto;
         padding: 0 16px;
       }
+      .unit-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -84,39 +95,55 @@
   <main class="page-shell">
     <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
     <h1 class="notes-title">Internet &amp; Web Technology</h1>
-    <section class="note-section">
-    <h2>Internet and the web</h2>
-    <p>The internet connects computers. The web lets browsers request pages from web servers.</p>
-    <h2>Web basics</h2>
-    <p>HTML structures a page, CSS styles it, and JavaScript can add interactive behavior.</p>
-    <h2>More notes</h2>
-    <p>A browser sends an HTTP request when it needs a web resource. A web server responds with the requested page or other data.</p>
-    <p>A URL identifies a resource on the web. It commonly includes a protocol, a domain name, and an optional path to a specific page.</p>
-    <h2>How a page loads</h2>
-    <ol>
-      <li>The browser finds the server through a domain name.</li>
-      <li>The browser sends an HTTP or HTTPS request.</li>
-      <li>The server returns HTML and related resources.</li>
-      <li>The browser requests stylesheets, images, scripts, and other files.</li>
-      <li>The browser builds and displays the page.</li>
-    </ol>
-    <h2>Common HTTP methods</h2>
-    <ul>
-      <li><strong>GET:</strong> requests a resource.</li>
-      <li><strong>POST:</strong> submits data to the server.</li>
-      <li><strong>PUT:</strong> replaces or creates a resource.</li>
-      <li><strong>DELETE:</strong> removes a resource.</li>
-    </ul>
-    <h2>HTML basics</h2>
-    <p>HTML uses elements and tags to describe content. Semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> describe the purpose of page sections.</p>
-    <h2>CSS basics</h2>
-    <p>CSS uses selectors to choose HTML elements and declarations to set their appearance. The box model includes content, padding, border, and margin.</p>
-    <h2>Responsive design</h2>
-    <p>Responsive pages work across screen sizes. Flexible widths, grid layouts, and media queries help adapt content for phones, tablets, and desktops.</p>
-    <h2>Security reminder</h2>
-    <p>HTTPS encrypts communication between the browser and server. Applications should validate input, protect passwords, and avoid exposing sensitive information.</p>
-    <p><a href="https://example.com/web-technology-syllabus">See syllabus</a></p>
-    </section>
+    <p class="notes-intro">Explore the five units below. Unit 1 covers how the internet works, web page loading, HTML, CSS, and HTTP.</p>
+
+    <div class="unit-layout" id="units">
+      <nav class="unit-nav" aria-label="Internet and Web Technology units">
+        <h2>Course units</h2>
+        <a href="#unit-1"><span>Unit 1</span><span class="unit-status">Notes ready</span></a>
+        <a href="#unit-2"><span>Unit 2</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-3"><span>Unit 3</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-4"><span>Unit 4</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-5"><span>Unit 5</span><span class="unit-status">Coming soon</span></a>
+        <a href="{% url 'study' %}">View syllabus outline</a>
+      </nav>
+
+      <div class="unit-content">
+        <section class="note-section" id="unit-1">
+          <p class="eyebrow">UNIT 1 &bull; NOTES READY</p>
+          <h2>Internet and the web</h2>
+          <p>The internet connects computers. The web lets browsers request pages and resources from web servers.</p>
+          <h2>Web basics</h2>
+          <p>HTML structures a page, CSS styles it, and JavaScript adds interactive behavior.</p>
+          <h2>How a page loads</h2>
+          <ol>
+            <li>The browser finds the server through a domain name.</li>
+            <li>The browser sends an HTTP or HTTPS request.</li>
+            <li>The server returns HTML and related resources.</li>
+            <li>The browser requests stylesheets, images, scripts, and other files.</li>
+            <li>The browser builds and displays the page.</li>
+          </ol>
+          <h2>URLs and HTTP methods</h2>
+          <p>A URL identifies a resource and commonly includes a protocol, domain name, and path.</p>
+          <ul>
+            <li><strong>GET:</strong> requests a resource.</li>
+            <li><strong>POST:</strong> submits data to the server.</li>
+            <li><strong>PUT:</strong> creates or replaces a resource.</li>
+            <li><strong>DELETE:</strong> removes a resource.</li>
+          </ul>
+          <h2>HTML basics</h2>
+          <p>HTML uses elements and tags to describe content. Semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> describe page structure.</p>
+          <h2>CSS basics</h2>
+          <p>CSS uses selectors and declarations to control presentation. The box model includes content, padding, border, and margin.</p>
+          <h2>Responsive design and security</h2>
+          <p>Flexible widths, grid layouts, and media queries help pages adapt to phones, tablets, and desktops. HTTPS encrypts browser-server communication.</p>
+        </section>
+        <section class="unit-placeholder" id="unit-2"><p class="eyebrow">UNIT 2</p><h2>Unit 2 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-3"><p class="eyebrow">UNIT 3</p><h2>Unit 3 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-4"><p class="eyebrow">UNIT 4</p><h2>Unit 4 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-5"><p class="eyebrow">UNIT 5</p><h2>Unit 5 notes</h2><p>Notes for this unit will be added soon.</p></section>
+      </div>
+    </div>
   </main>
 </body>
 </html>

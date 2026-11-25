@@ -74,12 +74,23 @@
       border-radius: 4px;
       background: #f8f8f5;
     }
+    .notes-intro { color: #68756f; }
+    .unit-layout { display: grid; grid-template-columns: 200px 1fr; align-items: start; gap: 12px; }
+    .unit-nav, .unit-content { display: grid; gap: 12px; }
+    .unit-nav { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-nav h2 { margin: 0 0 4px; }
+    .unit-nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px; color: #303936; text-decoration: none; }
+    .unit-nav a:hover { background: #f3f3ef; }
+    .unit-status { color: #64716b; font-size: 13px; }
+    .unit-placeholder { padding: 16px; border: 1px solid #d4d9d5; border-radius: 6px; background: white; }
+    .unit-placeholder h2 { margin-top: 0; }
 
     @media (max-width: 650px) {
       .page-shell {
         margin: 20px auto;
         padding: 0 16px;
       }
+      .unit-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -91,42 +102,58 @@
   <main class="page-shell">
     <p class="eyebrow">AIML &bull; 1ST YEAR &bull; 1ST SEMESTER</p>
     <h1 class="notes-title">Programming</h1>
-    <section class="note-section">
-    <h2>Basic idea</h2>
-    <p>Programming means writing instructions for a computer. Variables store values that a program can use.</p>
-    <h2>Example</h2>
-    <p>A condition can check whether a number is greater than zero and report that it is positive.</p>
-    <h2>More notes</h2>
-    <p>Loops repeat a set of instructions. A loop can process each item in a list or continue while a condition remains true.</p>
-    <p>Functions group instructions under a name so they can be reused. They can accept input values and return a result to the rest of a program.</p>
-    <h2>Variables and data types</h2>
-    <p>Variables have names and store values. Common types include integers, floating-point numbers, strings, booleans, lists, and dictionaries.</p>
-    <h2>Example loop</h2>
-    <p>In Python, <code>for number in range(5):</code> repeats its indented block with the values 0, 1, 2, 3, and 4.</p>
-    <h2>Example function</h2>
-    <pre><code>def add(a, b):
+    <p class="notes-intro">Explore the five units below. Unit 1 introduces variables, conditions, loops, functions, data structures, and debugging.</p>
+
+    <div class="unit-layout" id="units">
+      <nav class="unit-nav" aria-label="Programming units">
+        <h2>Course units</h2>
+        <a href="#unit-1"><span>Unit 1</span><span class="unit-status">Notes ready</span></a>
+        <a href="#unit-2"><span>Unit 2</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-3"><span>Unit 3</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-4"><span>Unit 4</span><span class="unit-status">Coming soon</span></a>
+        <a href="#unit-5"><span>Unit 5</span><span class="unit-status">Coming soon</span></a>
+        <a href="{% url 'study' %}">View syllabus outline</a>
+      </nav>
+
+      <div class="unit-content">
+        <section class="note-section" id="unit-1">
+          <p class="eyebrow">UNIT 1 &bull; NOTES READY</p>
+          <h2>Basic idea</h2>
+          <p>Programming means writing instructions for a computer. Variables store values that a program can use.</p>
+          <h2>Variables and data types</h2>
+          <p>Common types include integers, floating-point numbers, strings, booleans, lists, and dictionaries.</p>
+          <h2>Conditions</h2>
+          <p>A condition can check whether a number is greater than zero and report that it is positive. Comparison operators include <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code>.</p>
+          <h2>Loops</h2>
+          <p>Loops repeat a set of instructions. In Python, <code>for number in range(5):</code> repeats with the values 0, 1, 2, 3, and 4.</p>
+          <h2>Functions</h2>
+          <p>Functions group reusable instructions under a name. They can accept input values and return a result.</p>
+          <pre><code>def add(a, b):
     return a + b
 
 result = add(3, 4)</code></pre>
-    <p>This function accepts two values, adds them, and returns the result 7.</p>
-    <h2>Conditions</h2>
-    <p>A condition can use operators such as <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code>. Logical operators include <code>and</code>, <code>or</code>, and <code>not</code>.</p>
-    <h2>Data structures</h2>
-    <ul>
-      <li><strong>List:</strong> an ordered collection that can change.</li>
-      <li><strong>Tuple:</strong> an ordered collection that normally cannot change.</li>
-      <li><strong>Dictionary:</strong> stores values using unique keys.</li>
-      <li><strong>Set:</strong> stores a collection of unique values.</li>
-    </ul>
-    <h2>Debugging tips</h2>
-    <ol>
-      <li>Read the error message and identify the file and line number.</li>
-      <li>Check variable values before and after the failing operation.</li>
-      <li>Divide the problem into smaller parts and test each part.</li>
-      <li>Use descriptive variable names and print or log information when needed.</li>
-    </ol>
-    <p><a href="https://example.com/programming-syllabus">See syllabus</a></p>
-    </section>
+          <p>This function accepts two values, adds them, and returns 7.</p>
+          <h2>Data structures</h2>
+          <ul>
+            <li><strong>List:</strong> an ordered collection that can change.</li>
+            <li><strong>Tuple:</strong> an ordered collection that normally cannot change.</li>
+            <li><strong>Dictionary:</strong> stores values using unique keys.</li>
+            <li><strong>Set:</strong> stores a collection of unique values.</li>
+          </ul>
+          <h2>Debugging tips</h2>
+          <ol>
+            <li>Read the error and identify the file and line number.</li>
+            <li>Check variable values before and after the failing operation.</li>
+            <li>Divide the problem into smaller parts and test each part.</li>
+            <li>Use descriptive names and log or print information when needed.</li>
+          </ol>
+        </section>
+        <section class="unit-placeholder" id="unit-2"><p class="eyebrow">UNIT 2</p><h2>Unit 2 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-3"><p class="eyebrow">UNIT 3</p><h2>Unit 3 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-4"><p class="eyebrow">UNIT 4</p><h2>Unit 4 notes</h2><p>Notes for this unit will be added soon.</p></section>
+        <section class="unit-placeholder" id="unit-5"><p class="eyebrow">UNIT 5</p><h2>Unit 5 notes</h2><p>Notes for this unit will be added soon.</p></section>
+      </div>
+    </div>
   </main>
 </body>
 </html>
