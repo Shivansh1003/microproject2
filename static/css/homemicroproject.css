@@ -180,9 +180,26 @@ body {
   text-decoration: underline;
 }
 
+.site-footer {
+  padding: 16px;
+  border-top: 1px solid #d5e0da;
+  color: #68756f;
+  font-size: 13px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 body.dark-theme {
   background: #1c2922;
   color: #edf5f0;
+}
+
+body.dark-theme .site-footer {
+  border-top-color: #3d5548;
+  color: #b8c9bf;
 }
 
 body.dark-theme .heading {
